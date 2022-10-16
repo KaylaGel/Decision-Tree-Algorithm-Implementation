@@ -7,25 +7,25 @@ The goal of this project was to build build an algorithm using the ID3 decision 
 
 # Running the model 
 
-## Set-up virutal environment 
+## 1. Set-up virutal environment 
 
 ```bash
 python -m venv .env
 ```
 
-### activate virtual environment
+### 1.1 activate virtual environment
 
 ```bash
 .env\Scripts\activate
 ```
 
-## Install requirements 
+## 2. Install requirements 
 ```bash
 pip install -r requirements.txt
 ```
 
 
-## Running the program 
+## 3. Running the program 
 ```bash
 main.py
 ```
