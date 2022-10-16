@@ -1,3 +1,6 @@
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score
+
 # this code was removed from run.py file as it was only used for the purpose of testing
 
 def binarize_sex(val):

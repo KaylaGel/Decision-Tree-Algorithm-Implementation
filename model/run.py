@@ -9,8 +9,6 @@ import time # gets the current time
 import os
 
 # The following imports are only used for evaluation 
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score
 from sklearn.tree import DecisionTreeClassifier, export_graphviz # For usecase of the sklearn decision tree classification
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import train_test_split
@@ -88,7 +86,7 @@ def palmer_penguins_sklearn():
 
 
     # load data
-    X, y = make_blobs(n_samples=342)
+    X, y = make_blobs(n_samples=344)
     penguin_data = pd.read_csv('data\penguins.csv')
     
     # start timer 

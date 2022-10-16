@@ -139,31 +139,30 @@ class Node:
                 elif self.current_depth >= self.max_depth:   
                     self.target_values_count = y.value_counts().to_dict()
                     self.entropy = self.calculate_entropy(y)
-                    self.decision = y.mode()[0] # mode = value that appears most often.
+                    self.decision = y.mode()[0] # sets the decision to the value that appears most often.
                     return
                 else:
                     self.entropy = self.calculate_entropy(y)
                     self.target_values_count = y.value_counts().to_dict()
                     info_gain_max = -1
-                    for att in X.keys():    # check each feature to split
-                        idx = X[att].first_valid_index()
-                        if is_numeric_dtype(type(X[att][idx])):
+                    for attribute in X.keys():    # check each feature to split
+                        idx = X[attribute].first_valid_index()
+                        if is_numeric_dtype(type(X[attribute][idx])):
                             # apply a threshold for the split by getting the best value
-                            # We are looping through each unique possibel value seen.
-                            _feat_values = X[att].sort_values(ascending=True).unique()
+                            # Loop through every possible value.
+                            _feat_values = X[attribute].sort_values(ascending=True).unique()
                             for value in _feat_values:
-                                aig = self.compute_info_gain_continuous(X,att,value,y)
+                                aig = self.compute_info_gain_continuous(X,attribute,value,y)
                                 if aig > info_gain_max:
                                     info_gain_max = aig
-                                    self.feature_name_split = att
+                                    self.feature_name_split = attribute
                                     self.split_feat_value = value
                                     self.continous_feature = True
-                                    #print(f"Ent {att}<{attribute_split_value}, ent:{ent}")
                         else:
                             # discrete attribute, apply
-                            aig = self.compute_info_gain(X, att, y)
+                            aig = self.compute_info_gain(X, attribute, y)
                             if aig > info_gain_max:
-                                self.feature_name_split = att
+                                self.feature_name_split = attribute
                                 info_gain_max = aig
                                 self.continous_feature = False               
 

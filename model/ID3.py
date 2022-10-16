@@ -64,7 +64,6 @@ class DecisionTree:
     def compute_accuracy_with_time(tree, X,y):
         """
         Determines accuracy of the system.
-        Accuracy = (1 - error) = (TP+TN)/(TP+TN+FP+FN)
         
         Parameter:
         X -- the decision tree
