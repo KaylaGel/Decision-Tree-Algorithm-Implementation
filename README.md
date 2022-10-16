@@ -13,19 +13,19 @@ The goal of this project was to build build an algorithm using the ID3 decision 
 python -m venv .env
 ```
 
-### 1.1 activate virtual environment
+## 2. activate virtual environment
 
 ```bash
 .env\Scripts\activate
 ```
 
-## 2. Install requirements 
+## 3. Install requirements 
 ```bash
 pip install -r requirements.txt
 ```
 
 
-## 3. Running the program 
+## 4. Running the program 
 ```bash
 main.py
 ```
